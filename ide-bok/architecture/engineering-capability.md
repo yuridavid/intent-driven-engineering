@@ -2,9 +2,9 @@
 document_id: IDE-ARCH-EC-001
 name: Engineering Capability Architecture
 classification: foundational
-status: proposed
-version: 0.2
-owner: unassigned
+status: canonical
+version: 1.0
+owner: IDE-BoK Steward
 last_reviewed: 2026-07-28
 ---
 
@@ -12,27 +12,25 @@ last_reviewed: 2026-07-28
 
 ## 1. Document Status and Architectural Authority
 
-This document is the sole governed source for the proposed architecture of
-Engineering Capabilities in Intent-Driven Engineering (IDE).
+This document is the sole canonical source for the architecture of Engineering
+Capabilities in Intent-Driven Engineering (IDE).
 
-**Current status:** Proposed
+**Current status:** Canonical
 
 **Authoritative location:** `ide-bok/architecture/engineering-capability.md`
 
-The status `proposed` means that this architecture is complete enough for
-review, but it is not yet canonical. It must not be represented as approved
-methodology knowledge.
+**Owner:** IDE-BoK Steward
 
-Promotion to `canonical` requires:
+**Approval decision:** [GOV-005 — Approve the Engineering Capability Architecture](../../governance/decision-log.md#gov-005--approve-the-engineering-capability-architecture)
 
-1. resolution of the required architecture review findings;
-2. confirmation that repository references preserve a single source of truth;
-3. review of dependencies and affected documents;
-4. an explicit governance decision approving the architecture;
-5. publication of the approved status and version in this file.
+Version 1.0 is the approved stable baseline for all future Engineering
+Capabilities. The IDE-BoK Steward is accountable for architectural coherence,
+periodic review, impact assessment, and coordination of breaking architectural
+changes with the Repository Owner.
 
 Documents outside `ide-bok/` may summarize or navigate to this architecture.
-They must not duplicate or redefine it.
+They must not duplicate or redefine its semantics. Future changes must follow
+the governance and change-control rules in this document.
 
 ## 2. Purpose and Scope
 
@@ -451,7 +449,7 @@ material.
 Optimize for intent preservation, delivery outcomes, quality, and Evidence
 rather than adoption of a particular tool.
 
-## 13. Change Control and Task 1 Entry Criteria
+## 13. Change Control and Task 1 Readiness
 
 Changes to the canonical definition, qualification rules, Engineering
 Capability Contract, typed architecture model, lifecycle, or ownership rules
@@ -464,16 +462,21 @@ affect every capability and require:
 - a version increment;
 - an updated change history.
 
-Task 1 may create the Engineering Capability Template only after:
+Architecture review is complete, governance decision GOV-005 is recorded,
+version 1.0 is canonical, and derived repository references are aligned.
 
-1. this proposed architecture passes architecture and governance review;
-2. the governance decision is recorded;
-3. this document is promoted to `canonical`;
-4. derived repository references are consistent with the approved version.
+**Task 1 is formally unblocked.**
 
-Until those conditions are satisfied, Task 1 remains blocked.
+Task 1 may create the Engineering Capability Template using this architecture
+as its source of truth. Task 1 must not redefine the capability contract,
+concept boundaries, typed relationships, lifecycle, or repository ownership
+rules established here.
 
 ## Change History
 
+- 1.0 — Promoted the Engineering Capability Architecture from `proposed` to
+  `canonical` through governance decision GOV-005. Assigned ownership to the
+  IDE-BoK Steward and formally unblocked Task 1. No architectural redesign was
+  performed during promotion.
 - 0.2 — Restructured the proposed architecture to resolve review findings
   F-001 through F-009.

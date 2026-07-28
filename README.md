@@ -31,4 +31,8 @@ Playbooks / Skills / Book / Training / Visual Assets
 - `examples/`: practical cases.
 - `docs/`: roadmap, derived documentation, and links to authoritative sources.
 
+Canonical cross-cutting architecture:
+
+- [Engineering Capability Architecture](ide-bok/architecture/engineering-capability.md)
+
 The canonical version is maintained in English. Translations may simplify or contextualize, but must not redefine canonical concepts.
