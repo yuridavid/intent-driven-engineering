@@ -92,7 +92,7 @@ flowchart TB
 | `docs/` | Roadmaps and derived repository documentation. | Repository governance and the IDE-BoK material being documented. | Repository Owner, IDE-BoK Steward, Reviewer. | Derived documentation and planning; not an independent source of canonical definitions. |
 | `examples/` | Illustrative examples and case studies. | Business Change, Source Specification, Readiness, Execution Boundary, evidence, outcomes, and learning. | Relevant Domain Steward and Reviewer. | Operational knowledge. Examples illustrate canonical content but are not normative. |
 | `governance/` | Repository ownership, decisions, and contribution governance. | Constitution, authoring rules, and repository operating decisions. | Repository Owner and IDE-BoK Steward. | Controls review and promotion across the lifecycle. |
-| `ide-bok/` | The Intent-Driven Engineering Body of Knowledge. | Constitution, taxonomy, authoring guide, evidence, and governance review. | IDE-BoK Steward, Domain Stewards, and Reviewers. | Destination of promoted knowledge and source for derived material. Document metadata currently distinguishes proposed content from more mature content. |
+| `ide-bok/` | The Intent-Driven Engineering Body of Knowledge and its governed cross-cutting architecture. | Constitution, taxonomy, authoring guide, evidence, and governance review. | IDE-BoK Steward, Domain Stewards, and Reviewers. | Destination of promoted knowledge and source for derived material. Document metadata distinguishes proposed content from more mature content. |
 | `research/` | Non-canonical research lab for observations, hypotheses, experiments, comparisons, validation, and rejected work. | Research Promotion Process, hypothesis template, evidence, and contributor review. | Research Contributor and Reviewer; IDE-BoK Steward at promotion boundaries. | Entry and evaluation area for experimental knowledge. |
 | `skills/` | Candidate AI skills derived from IDE-BoK concepts. | Canonical IDE-BoK definitions and relevant operational templates. | Relevant Domain Steward, IDE-BoK Steward, and Reviewer. | Derived operational application; skills do not become independent sources of truth. |
 | `templates/` | Reusable structures for concepts, hypotheses, ADRs, metrics, business changes, specifications, and readiness assessments. | Constitution, Authoring Guide, concept model, and relevant domain concepts. | IDE-BoK Steward and relevant Domain Stewards. | Operational knowledge supporting research, governance, authoring, and application. |
@@ -113,7 +113,8 @@ All three subdirectories currently contain only `.gitkeep` placeholders.
 
 | Directory | Purpose | Dependencies | Ownership | Lifecycle relationship |
 |---|---|---|---|---|
-| `docs/architecture/` | Architecture-level descriptions of the repository and its knowledge organization. | Current repository structure, governance documents, and IDE-BoK taxonomy. | Repository Owner, IDE-BoK Steward, Reviewer. | Derived documentation. It describes sources of truth but does not replace them. |
+| `docs/architecture/` | Derived architectural navigation and descriptions of the repository and its knowledge organization. | Current repository structure, governance documents, and authoritative IDE-BoK architecture. | Repository Owner, IDE-BoK Steward, Reviewer. | Derived documentation. It describes and links to sources of truth but does not replace them. |
+| `docs/architecture/reviews/` | Architecture review reports retained for traceability. | The reviewed architecture, review criteria, and repository governance. | IDE-BoK Steward and Reviewer. | Review evidence. A report may require changes but does not itself redefine the reviewed architecture. |
 
 The existing [`docs/roadmap.md`](../roadmap.md) tracks the planned development
 of governance, canonical foundations, pre-execution concepts, post-execution
@@ -141,8 +142,9 @@ knowledge domain.
 ## `ide-bok/`
 
 The numbered directories are the domains and governance areas currently present
-in the IDE-BoK. This map uses their existing names and does not introduce
-additional domains.
+in the IDE-BoK. The unnumbered `architecture/` directory contains cross-cutting
+architecture and does not introduce an additional IDE-BoK domain. This map uses
+the existing domain names and does not introduce additional domains.
 
 ```mermaid
 flowchart LR
@@ -168,6 +170,7 @@ individual concept files.
 
 | Directory | Current contents and purpose | Dependencies | Primary ownership roles | Lifecycle relationship |
 |---|---|---|---|---|
+| `ide-bok/architecture/` | Proposed cross-cutting Engineering Capability architecture. | Constitution, Concept Model, Knowledge Taxonomy, architecture review, and governance decision. | IDE-BoK Steward and Reviewer; Repository Owner for final governance authority. | Governed proposal and sole authoritative location for Engineering Capability architecture. It remains non-canonical until approved and promoted. |
 | `ide-bok/00-governance/` | Constitution, Authoring Guide, Knowledge Taxonomy, Concept Model, and Glossary. Protects IDE-BoK identity, structure, terminology, and authoring consistency. | North Star, evidence, governance decisions, and concept relationships. | IDE-BoK Steward and Reviewer; Repository Owner for final authority. | Defines the rules by which knowledge is classified, authored, reviewed, and treated as authoritative. |
 | `ide-bok/01-foundation/` | Intent, Context, Transformation, and Evidence. | Constitution and governance rules. The concepts also depend on one another conceptually, although their explicit relationship sections remain incomplete. | IDE-BoK Steward, Foundation Domain Steward, Reviewer. | Foundational knowledge under the current metadata status of each file. |
 | `ide-bok/02-discovery/` | Discovery, Business Change, and Source Specification. | Foundation concepts, especially Intent, Context, Transformation, and Evidence. | Discovery Domain Steward and Reviewer. | Core knowledge that turns an initial need into explicit intent and an execution-independent behavioral contract. |
@@ -186,6 +189,7 @@ IDE-BoK until it passes the Research Promotion Process.
 
 | Directory | Purpose | Dependencies | Ownership | Lifecycle relationship |
 |---|---|---|---|---|
+| `research/foundational/` | Holds foundational research about the object, boundary, and conceptual basis of IDE. | Research Promotion Process, hypotheses, evidence, and related foundational concepts. | Research Contributor, IDE-BoK Steward, Reviewer. | Non-canonical foundational research that may inform future concept proposals. |
 | `research/observations/` | Records observed problems, outcomes, or failure modes. | Practical observation and enough context to make the observation interpretable. | Research Contributor and Reviewer. | Lifecycle entry point. |
 | `research/hypotheses/` | Holds testable explanations or proposals derived from observations. | Observations and the hypothesis template. | Research Contributor and Reviewer. | Experimental knowledge awaiting evaluation. |
 | `research/experiments/` | Holds validation approaches and experiment results. | Hypotheses, success and refutation conditions, and observable evidence. | Research Contributor and Reviewer. | Evaluation stage. |
@@ -193,8 +197,8 @@ IDE-BoK until it passes the Research Promotion Process.
 | `research/rejected/` | Retains rejected or superseded proposals for historical learning. | Governance or research decisions, evidence, reasons, dates, affected concepts, and reconsideration conditions. | Research Contributor and Reviewer. | Terminal or paused experimental state. |
 | `research/comparisons/` | Compares IDE with other approaches; currently contains a Scrum comparison. | Accurate descriptions of the compared approach and relevant IDE-BoK concepts. | Research Contributor, relevant Domain Steward, Reviewer. | Experimental or explanatory research; not authoritative IDE-BoK content. |
 
-Except for `research/comparisons/`, the research subdirectories currently
-contain only `.gitkeep` placeholders.
+Except for `research/comparisons/` and `research/foundational/`, the research
+subdirectories currently contain only `.gitkeep` placeholders.
 
 ## `skills/`
 
@@ -237,7 +241,7 @@ domain.
 | `VISION.md` | Draft vision structure. It currently contains placeholders except for the North Star. |
 | `CONTRIBUTING.md` | Contribution workflow and pull request integrity checklist. |
 | `CHANGELOG.md` | Records unreleased repository additions; no release policy is currently defined. |
-| `REPOSITORY-MANIFEST.md` | Manually lists the intended repository contents. It does not yet include `VISION.md` or this architecture map. |
+| `REPOSITORY-MANIFEST.md` | Manually lists the intended repository contents. |
 | `LICENSE.md` | Records that no license has been selected and that all rights are currently reserved. |
 | `.gitignore` | Excludes local or generated files from version control. |
 
